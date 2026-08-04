@@ -11,17 +11,19 @@ class Solution {
             }
         }
         HashSet<Integer> hs=new HashSet<>();
-        for(int i=0;i<nums.length;i++){
-            hs.add(nums[i]);
+        for(int i:nums){
+            hs.add(i);
         }
         List<Integer> ans=new ArrayList<>();
         int num=min;
         while(num<max){
             if(!hs.contains(num)){
                 ans.add(num);
+
             }
             num++;
         }
         return ans;
     }
+
 }
