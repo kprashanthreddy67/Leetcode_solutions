@@ -6,7 +6,7 @@ class Solution {
             char ch=word.charAt(i);
             if(ch>='a' && ch<='z'){
                 lower[ch-'a']++;
-            }else if(ch>='A' && ch<='Z'){
+            }else{
                 lower[ch-'A'+26]++;
             }
         }
