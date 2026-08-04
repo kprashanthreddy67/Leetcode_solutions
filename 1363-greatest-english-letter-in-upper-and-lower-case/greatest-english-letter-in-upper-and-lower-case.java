@@ -11,7 +11,7 @@ class Solution {
         }
         for(int i=25;i>=0;i--){
             if(freq[i]>0 && freq[i+26]>0){
-                return  String.valueOf((char) ('A' + i));
+                return  String.valueOf((char)('A'+i));
             }
         }
         return "";
