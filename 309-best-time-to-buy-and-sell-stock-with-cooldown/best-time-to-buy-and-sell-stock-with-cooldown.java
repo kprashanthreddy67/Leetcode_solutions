@@ -1,5 +1,5 @@
 class Solution {
-    public int check(int i,int buy,int prices[],int dp[][]){
+    public int check(int i,int buy,int[] prices,int dp[][]){
         if(i>=prices.length){
             return 0;
         }
@@ -10,9 +10,7 @@ class Solution {
         if(buy==1){
             profit=Math.max(-prices[i]+check(i+1,0,prices,dp),0+check(i+1,1,prices,dp));
         }else{
-            if(i<prices.length){
             profit=Math.max(prices[i]+check(i+2,1,prices,dp),0+check(i+1,0,prices,dp));
-            }
         }
         return dp[i][buy]= profit;
     }
