@@ -9,6 +9,7 @@ class Solution {
     }
     public String removeDuplicates(String s, int k) {
         Stack<Pair> st=new Stack<>();
+        StringBuilder sb=new StringBuilder();
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(st.isEmpty()){
@@ -21,13 +22,11 @@ class Solution {
             }else{
                 st.push(new Pair(ch,1));
             }
-
         }
-        StringBuilder sb=new StringBuilder();
         while(!st.isEmpty()){
-            Pair p=st.pop();
-            for(int i=0;i<p.freq;i++){
-                sb.append(p.ch);
+            Pair pd=st.pop();
+            for(int i=0;i<pd.freq;i++){
+                sb.append(pd.ch);
             }
         }
         return sb.reverse().toString();
