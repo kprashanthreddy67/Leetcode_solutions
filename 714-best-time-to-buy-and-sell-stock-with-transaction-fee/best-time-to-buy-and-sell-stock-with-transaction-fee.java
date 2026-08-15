@@ -1,6 +1,6 @@
 class Solution {
-    public int check(int i,int buy,int fee,int prices[],int dp[][]){
-        if(i==prices.length){
+    public int check(int i,int buy,int prices[],int fee,int dp[][]){
+        if(i>=prices.length){
             return 0;
         }
         if(dp[i][buy]!=-1){
@@ -8,9 +8,9 @@ class Solution {
         }
         int profit=0;
         if(buy==1){
-            profit=Math.max(-prices[i]+check(i+1,0,fee,prices,dp),0+check(i+1,1,fee,prices,dp));
+            profit=Math.max(-prices[i]+check(i+1,0,prices,fee,dp),0+check(i+1,1,prices,fee,dp));
         }else{
-            profit=Math.max(prices[i]-fee+check(i+1,1,fee,prices,dp),0+check(i+1,0,fee,prices,dp));
+            profit=Math.max(prices[i]-fee+check(i+1,1,prices,fee,dp),0+check(i+1,0,prices,fee,dp));
         }
         return dp[i][buy]= profit;
     }
@@ -19,6 +19,6 @@ class Solution {
         for(int i=0;i<prices.length;i++){
             Arrays.fill(dp[i],-1);
         }
-        return check(0,1,fee,prices,dp);
+        return check(0,1,prices,fee,dp);
     }
 }
