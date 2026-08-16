@@ -1,10 +1,10 @@
 class Solution {
     public int check(int i,int j,String s,int dp[][]){
-        if(i>j){
-            return 0;
-        }
         if(i==j){
             return 1;
+        }
+        if(i>j){
+            return 0;
         }
         if(dp[i][j]!=-1){
             return dp[i][j];
