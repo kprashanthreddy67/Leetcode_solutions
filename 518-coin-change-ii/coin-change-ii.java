@@ -19,10 +19,29 @@ class Solution {
     }
     public int change(int amount, int[] coins) {
         int dp[][]=new int[coins.length][amount+1];
-        for(int i=0;i<coins.length;i++){
-            Arrays.fill(dp[i],-1);
+        for(int i=0;i<=amount;i++){
+            if(i%coins[0]==0){
+                dp[0][i]=1;
+            }else{
+                dp[0][i]=0;
+            }
         }
-        return check(coins.length-1,coins,amount,dp);
+        for(int i=1;i<coins.length;i++){
+                dp[i][0] = 1;  
+            for(int j=1;j<=amount;j++){
+                int not=dp[i-1][j];
+                int take=0;
+                if(j>=coins[i]){
+                    take=dp[i][j-coins[i]];
+                }
+                dp[i][j]=not+take;
+            }
+        }
+        return dp[coins.length-1][amount];
+        // for(int i=0;i<coins.length;i++){
+        //     Arrays.fill(dp[i],-1);
+        // }
+        // return check(coins.length-1,coins,amount,dp);
 
     }
 }
