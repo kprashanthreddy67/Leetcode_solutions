@@ -31,15 +31,16 @@ class Solution {
         ListNode prev=null;
         ListNode slow=head;
         ListNode fast=head;
+        if(head.next==null){
+            return new TreeNode(head.val);
+        }
         while(fast!=null && fast.next!=null){
             prev=slow;
             slow=slow.next;
             fast=fast.next.next;
 
         }
-        if(head.next==null){
-            return new TreeNode(head.val);
-        }
+        
         prev.next=null;
         ListNode second=slow.next;
         slow.next=null;
