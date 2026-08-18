@@ -10,10 +10,12 @@ class Solution {
                     isplaced=true;
                     break;
                 }
+
             }
             if(!isplaced){
                 cnt++;
             }
+
         }
         return cnt;
     }
