@@ -1,5 +1,5 @@
 class Solution {
-    public int check(int i,int person,int m,int[]piles,int dp[][][]){
+    public int check(int i,int person,int m,int[] piles,int[][][] dp){
         if(i>=piles.length){
             return 0;
         }
@@ -11,15 +11,16 @@ class Solution {
         for(int x=1;x<=Math.min(2*m,piles.length-i);x++){
             stones+=piles[i+x-1];
             if(person==1){
-                res=Math.max(res,stones+check(i+x,0,Math.max(x,m),piles,dp));
+                res=Math.max(res,stones+check(i+x,0,Math.max(m,x),piles,dp));
             }else{
-                res=Math.min(res,check(i+x,1,Math.max(x,m),piles,dp));
+                res=Math.min(res,check(i+x,1,Math.max(m,x),piles,dp));
             }
         }
-        return dp[i][person][m]= res;
+        return dp[i][person][m] = res;
     }
     public int stoneGameII(int[] piles) {
-        int dp[][][]=new int[piles.length][2][piles.length+1];
+        int n=piles.length;
+        int dp[][][]=new int[piles.length][2][n+1];
         for(int i=0;i<piles.length;i++){
             for(int j=0;j<2;j++){
                 Arrays.fill(dp[i][j],-1);
