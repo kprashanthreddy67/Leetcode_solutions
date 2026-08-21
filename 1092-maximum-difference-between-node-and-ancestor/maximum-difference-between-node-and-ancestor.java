@@ -15,14 +15,16 @@
  */
 class Solution {
     int ans=0;
-    public void check(TreeNode root,int min,int max){
-        if(root==null)return;
+    public void check(TreeNode root,int max,int min){
+        if(root==null){
+            return;
+        }
         ans=Math.max(ans,Math.abs(root.val-min));
         ans=Math.max(ans,Math.abs(root.val-max));
-        min=Math.min(root.val,min);
-        max=Math.max(root.val,max);
-        check(root.left,min,max);
-        check(root.right,min,max);
+        min=Math.min(min,root.val);
+        max=Math.max(max,root.val);
+        check(root.left,max,min);
+        check(root.right,max,min);
     }
     public int maxAncestorDiff(TreeNode root) {
         check(root,root.val,root.val);
