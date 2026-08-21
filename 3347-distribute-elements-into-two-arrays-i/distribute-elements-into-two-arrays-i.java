@@ -11,9 +11,9 @@ class Solution {
                 arr2.add(nums[i]);
             }
         }
-        int k=0;
         int n=arr1.size();
         int m=arr2.size();
+        int k=0;
         int arr[]=new int[n+m];
         for(int i=0;i<arr1.size();i++){
             arr[k++]=arr1.get(i);
