@@ -14,19 +14,19 @@
  * }
  */
 class Solution {
-    int sum=0;
+    int ans=0;
     public void check(TreeNode root,boolean isleft){
         if(root==null){
-            return;
+            return ;
         }
         if(root.left==null && root.right==null && isleft){
-            sum+=root.val;
+            ans+=root.val;
         }
         check(root.left,true);
         check(root.right,false);
     }
     public int sumOfLeftLeaves(TreeNode root) {
          check(root,false);
-         return sum;
+         return ans;
     }
 }
