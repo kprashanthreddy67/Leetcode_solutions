@@ -17,7 +17,7 @@ class Solution {
         return dp[i]= result;
     }
     public String stoneGameIII(int[] stoneValue) {
-        int dp[]=new int[stoneValue.length+1];
+        int dp[]=new int[stoneValue.length];
         Arrays.fill(dp,-1);
         int ans=check(0,stoneValue,dp);
         // String
