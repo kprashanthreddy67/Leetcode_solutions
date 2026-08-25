@@ -6,23 +6,24 @@ class Solution {
         if(dp[i]!=-1){
             return dp[i];
         }
-        int result=Integer.MIN_VALUE;
-        result=Math.max(result,stoneValue[i]-check(i+1,stoneValue,dp));
+        int res=Integer.MIN_VALUE;
+         res=Math.max(res,stoneValue[i]-check(i+1,stoneValue,dp));
         if(i+1<stoneValue.length){
-         result=Math.max(result,stoneValue[i]+stoneValue[i+1]-check(i+2,stoneValue,dp));
+            res=Math.max(res,stoneValue[i]+stoneValue[i+1]-check(i+2,stoneValue,dp));
         }
         if(i+2<stoneValue.length){
-            result=Math.max(result,stoneValue[i]+stoneValue[i+1]+stoneValue[i+2]-check(i+3,stoneValue,dp));
+
+            res=Math.max(res,stoneValue[i]+stoneValue[i+1]+stoneValue[i+2]-check(i+3,stoneValue,dp));
         }
-        return dp[i]= result;
+        return dp[i]= res;
     }
     public String stoneGameIII(int[] stoneValue) {
         int dp[]=new int[stoneValue.length];
         Arrays.fill(dp,-1);
         int ans=check(0,stoneValue,dp);
-        // String
         if(ans>0){
             return "Alice";
+            
         }else if(ans<0){
             return "Bob";
         }else{
