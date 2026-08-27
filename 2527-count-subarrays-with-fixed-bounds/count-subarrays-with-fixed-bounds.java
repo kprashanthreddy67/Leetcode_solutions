@@ -2,26 +2,25 @@ class Solution {
     public long countSubarrays(int[] nums, int minK, int maxK) {
         long minKpos=-1;
         long maxKpos=-1;
-        long maxbound=-1;
+        long maxBound=-1;
         long ans=0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]<minK || nums[i]>maxK){
-                maxbound=i;
+        for(int r=0;r<nums.length;r++){
+            if(nums[r]<minK || nums[r]>maxK){
+                maxBound=r;
             }
-            if(nums[i]==minK){
-                minKpos=i;
+            if(nums[r]==minK){
+                minKpos=r;
             }
-            if(nums[i]==maxK){
-                maxKpos=i;
+            if(nums[r]==maxK){
+                maxKpos=r;
             }
-            long smaller=Math.min(minKpos,maxKpos);
-            long temp=smaller-maxbound;
+            long smallest=Math.min(maxKpos,minKpos);
+            long temp=smallest-maxBound;
             if(temp<0){
                 ans+=0;
             }else{
                 ans+=temp;
             }
-            
         }
         return ans;
     }
