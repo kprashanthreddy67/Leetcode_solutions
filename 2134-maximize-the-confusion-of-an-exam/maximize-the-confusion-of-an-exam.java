@@ -1,11 +1,9 @@
 class Solution {
     public int maxConsecutiveAnswers(String answerKey, int k) {
         int l=0;
-        int max=0;
         int tr=0;
         int fl=0;
-        int cnt=0;
-        int min=0;
+        int max=0;
         for(int r=0;r<answerKey.length();r++){
             char ch=answerKey.charAt(r);
             if(ch=='T'){
