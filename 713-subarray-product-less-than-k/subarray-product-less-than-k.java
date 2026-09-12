@@ -4,11 +4,11 @@ class Solution {
         int ans=0;
         int mul=1;
         int max=0;
-        if(k<=1)return 0;
+        // if(k<=1)return 0;
         for(int r=0;r<nums.length;r++){
             int val=nums[r];
             mul=mul*nums[r];
-            while(mul>=k){
+            while(mul>k){
                 mul=mul/nums[l];
                 l++;
             }
