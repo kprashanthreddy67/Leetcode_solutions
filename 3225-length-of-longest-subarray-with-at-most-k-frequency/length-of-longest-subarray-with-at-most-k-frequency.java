@@ -10,9 +10,7 @@ class Solution {
                 hm.put(nums[l],hm.get(nums[l])-1);
                 l++;
             }
-            // if(hm.get(val)<=k){
-              max=Math.max(max,r-l+1);
-            // }
+            max=Math.max(max,r-l+1);
         }
         return max;
     }
