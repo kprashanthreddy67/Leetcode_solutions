@@ -13,9 +13,9 @@ class Solution {
             }
             if(mul<k){
                 ans+=r-l+1;
-                max=Math.max(max,ans);
+                // max=Math.max(max,ans);
             }
         }
-        return max;
+        return ans;
     }
 }
