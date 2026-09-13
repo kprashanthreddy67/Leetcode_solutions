@@ -6,9 +6,10 @@ class Solution {
         for(int r=0;r<s.length();r++){
             char ch1=s.charAt(r);
             char ch2=t.charAt(r);
-            sum+=Math.abs(ch1-ch2);
-            while(sum>maxCost){
-                sum-=Math.abs(s.charAt(l)-t.charAt(l));
+            // sum+=Math.abs(ch1-ch2);
+            maxCost-=Math.abs(ch1-ch2);
+            while(maxCost<0){
+                maxCost+=Math.abs(s.charAt(l)-t.charAt(l));
                 l++;
             }
             ans=Math.max(ans,r-l+1);
