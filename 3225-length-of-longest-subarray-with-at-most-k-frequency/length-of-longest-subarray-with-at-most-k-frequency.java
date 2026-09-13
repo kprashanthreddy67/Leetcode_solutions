@@ -1,7 +1,8 @@
 class Solution {
     public int maxSubarrayLength(int[] nums, int k) {
-        HashMap<Integer,Integer> hm=new HashMap<>();
+        HashMap<Integer,Integer>  hm=new HashMap<>();
         int l=0;
+        int cnt=0;
         int max=0;
         for(int r=0;r<nums.length;r++){
             int val=nums[r];
