@@ -1,16 +1,15 @@
 class Solution {
-    public int check(int[] nums,int k){
-         HashMap<Integer,Integer> hm=new HashMap<>();
-        int ans=0;
+    public int check(int[]nums,int k){
         int l=0;
+        int sum=0;
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        int ans=0;
         for(int r=0;r<nums.length;r++){
-            int val=nums[r];
-            hm.put(val,hm.getOrDefault(val,0)+1);
+            hm.put(nums[r],hm.getOrDefault(nums[r],0)+1);
             while(hm.size()>k){
-                int val1=nums[l];
-                hm.put(val1,hm.get(val1)-1);
-                if(hm.get(val1)==0){
-                    hm.remove(val1);
+                hm.put(nums[l],hm.get(nums[l])-1);
+                if(hm.get(nums[l])==0){
+                    hm.remove(nums[l]);
                 }
                 l++;
             }
