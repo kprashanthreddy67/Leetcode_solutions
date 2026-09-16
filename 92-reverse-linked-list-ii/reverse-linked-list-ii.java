@@ -13,28 +13,28 @@ class Solution {
         int cnt=1;
         ListNode temp=head;
         ListNode last=null;
-        while(temp!=null && cnt!=left){
+        while(cnt!=left){
             cnt++;
             last=temp;
             temp=temp.next;
         }
         ListNode sec=temp;
-
+        // ListNode curr=temp;
         ListNode prev=null;
         for(int i=1;i<=(right-left+1);i++){
             ListNode next=temp.next;
             temp.next=prev;
             prev=temp;
             temp=next;
+
         }
         if(last!=null){
-           last.next=prev;
+            last.next=prev;
         }else{
-             head=prev;
+            head=prev;
         }
         sec.next=temp;
         return head;
-    
 
     }
 }
