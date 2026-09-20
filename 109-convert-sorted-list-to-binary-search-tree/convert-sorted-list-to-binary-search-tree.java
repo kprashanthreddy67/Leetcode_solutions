@@ -25,15 +25,15 @@
  */
 class Solution {
     public TreeNode check(ListNode head){
+        ListNode slow=head;
+        ListNode fast=head;
+        ListNode last=null;
         if(head==null){
             return null;
         }
-        if( head.next==null){
+        if(head.next==null){
             return new TreeNode(head.val);
         }
-        ListNode last=null;
-        ListNode slow=head;
-        ListNode fast=head;
         while(fast!=null && fast.next!=null){
             last=slow;
             slow=slow.next;
@@ -41,14 +41,10 @@ class Solution {
         }
         ListNode sec=slow.next;
         last.next=null;
-        // if(head==null){
-        //     return new TreeNode();
-        // }
         TreeNode root=new TreeNode(slow.val);
         root.left=check(head);
         root.right=check(sec);
         return root;
-
     }
     public TreeNode sortedListToBST(ListNode head) {
         return check(head);
