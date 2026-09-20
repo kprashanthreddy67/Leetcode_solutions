@@ -1,30 +1,30 @@
 class Solution {
     public String decodeString(String s) {
-        Stack<Integer> n1=new Stack<>();
+        Stack<Integer> num=new Stack<>();
         Stack<String> str=new Stack<>();
-        int num=0;
+        int nu=0;
         String curr="";
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(Character.isDigit(ch)){
-                num=num*10+(ch-'0');
+                nu=nu*10+(ch-'0');
             }else if(ch=='['){
-                n1.push(num);
+                num.push(nu);
                 str.push(curr);
+                nu=0;
                 curr="";
-                num=0;
             }else if(ch==']'){
-                int repeat=n1.pop();
+                int freq=num.pop();
                 String prev=str.pop();
                 String temp="";
-                for(int j=0;j<repeat;j++){
-
-                    temp+=curr;
+                for(int j=0;j<freq;j++){
+                    temp=temp+curr;
                 }
                 curr=prev+temp;
             }else{
                 curr+=ch;
             }
+
         }
         return curr;
     }
