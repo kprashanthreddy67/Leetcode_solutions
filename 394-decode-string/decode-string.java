@@ -1,21 +1,22 @@
 class Solution {
     public String decodeString(String s) {
-        Stack<Integer> num=new Stack<>();
+        Stack<Integer> stnum=new Stack<>();
         Stack<String> str=new Stack<>();
-        int nu=0;
-        String curr="";
-        for(int i=0;i<s.length();i++){
+        int num=0;;
+        String curr=""; 
+        for(int  i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(Character.isDigit(ch)){
-                nu=nu*10+(ch-'0');
-            }else if(ch=='['){
-                num.push(nu);
+                num=num*10+(ch-'0');
+            }else if(ch== '['){
+                stnum.push(num);
                 str.push(curr);
-                nu=0;
+                num=0;
                 curr="";
             }else if(ch==']'){
-                int freq=num.pop();
-                String prev=str.pop();
+                int freq=stnum.pop();
+
+                String  prev=str.pop();
                 String temp="";
                 for(int j=0;j<freq;j++){
                     temp=temp+curr;
@@ -24,7 +25,6 @@ class Solution {
             }else{
                 curr+=ch;
             }
-
         }
         return curr;
     }
