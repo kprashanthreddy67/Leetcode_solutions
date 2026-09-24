@@ -1,6 +1,6 @@
 class Solution {
-    public int check(int i,int buy,int cnt,int[] prices,int dp[][][]){
-        if(i==prices.length || cnt<=0){
+    public int check(int i,int buy,int cnt,int prices[],int dp[][][]){
+        if(i==prices.length ||cnt==0){
             return 0;
         }
         if(dp[i][buy][cnt]!=-1){
@@ -17,7 +17,7 @@ class Solution {
     public int maxProfit(int[] prices) {
         int dp[][][]=new int[prices.length][2][3];
         for(int i=0;i<prices.length;i++){
-            for(int j=0;j<=1;j++){
+            for(int j=0;j<2;j++){
                 Arrays.fill(dp[i][j],-1);
             }
         }
