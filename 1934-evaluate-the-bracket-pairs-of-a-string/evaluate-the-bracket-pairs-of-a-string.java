@@ -3,9 +3,9 @@ class Solution {
         HashMap<String,String> hm=new HashMap<>();
         for(List<String> pair:knowledge){
             hm.put(pair.get(0),pair.get(1));
-        } 
+        }
+        StringBuilder sb=new  StringBuilder();
         int i=0;
-        StringBuilder sb=new StringBuilder();
         while(i<s.length()){
             if(s.charAt(i)>='a' && s.charAt(i)<='z'){
                 sb.append(s.charAt(i));
