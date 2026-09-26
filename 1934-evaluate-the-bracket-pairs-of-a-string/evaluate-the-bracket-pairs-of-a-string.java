@@ -4,7 +4,6 @@ class Solution {
         for(List<String> pair:knowledge){
             hm.put(pair.get(0),pair.get(1));
         }
-
         int i=0;
         StringBuilder sb=new StringBuilder();
         while(i<s.length()){
@@ -13,7 +12,7 @@ class Solution {
             }else if(s.charAt(i)=='('){
                 i++;
                 String temp="";
-                while(s.charAt(i)!=')' && i<s.length()){
+                while(i<s.length() && s.charAt(i)!=')'){
                     temp+=s.charAt(i);
                     i++;
                 }
@@ -22,7 +21,6 @@ class Solution {
                 }else{
                     sb.append("?");
                 }
-
             }
             i++;
         }
