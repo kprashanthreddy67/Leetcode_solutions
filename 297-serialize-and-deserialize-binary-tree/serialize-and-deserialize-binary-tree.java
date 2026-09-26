@@ -22,6 +22,7 @@ public class Codec {
             if(curr==null){
                 sb.append("n"+" ");
                 continue;
+
             }
             sb.append(curr.val+" ");
             q.add(curr.left);
@@ -37,7 +38,7 @@ public class Codec {
         }
         Queue<TreeNode> q=new LinkedList<>();
         String arr[]=data.split(" ");
-        TreeNode root=new TreeNode(Integer.parseInt(arr[0]));
+        TreeNode  root=new TreeNode(Integer.parseInt(arr[0]));
         q.add(root);
         for(int i=1;i<arr.length;i++){
             TreeNode parent=q.poll();
@@ -51,7 +52,6 @@ public class Codec {
                 parent.right=right;
                 q.add(right);
             }
-
         }
         return root;
     }
