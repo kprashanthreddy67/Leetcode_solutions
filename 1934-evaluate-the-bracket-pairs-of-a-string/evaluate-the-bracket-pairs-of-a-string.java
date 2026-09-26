@@ -3,7 +3,7 @@ class Solution {
         HashMap<String,String> hm=new HashMap<>();
         for(List<String> pair:knowledge){
             hm.put(pair.get(0),pair.get(1));
-        }
+        } 
         int i=0;
         StringBuilder sb=new StringBuilder();
         while(i<s.length()){
