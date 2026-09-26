@@ -20,7 +20,7 @@ public class Codec {
         while(!q.isEmpty()){
             TreeNode curr=q.poll();
             if(curr==null){
-                sb.append("n ");
+                sb.append("n"+" ");
                 continue;
             }
             sb.append(curr.val+" ");
@@ -28,7 +28,6 @@ public class Codec {
             q.add(curr.right);
         }
         return sb.toString();
-
     }
 
     // Decodes your encoded data to tree.
@@ -36,9 +35,9 @@ public class Codec {
         if(data==""){
             return null;
         }
+        Queue<TreeNode> q=new LinkedList<>();
         String arr[]=data.split(" ");
         TreeNode root=new TreeNode(Integer.parseInt(arr[0]));
-        Queue<TreeNode> q=new LinkedList<>();
         q.add(root);
         for(int i=1;i<arr.length;i++){
             TreeNode parent=q.poll();
@@ -46,13 +45,13 @@ public class Codec {
                 TreeNode left=new TreeNode(Integer.parseInt(arr[i]));
                 parent.left=left;
                 q.add(left);
-
             }
             if(!arr[++i].equals("n")){
-                TreeNode right=new TreeNode(Integer.valueOf(arr[i]));
+                TreeNode right=new TreeNode(Integer.parseInt(arr[i]));
                 parent.right=right;
                 q.add(right);
             }
+
         }
         return root;
     }
