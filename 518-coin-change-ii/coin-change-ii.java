@@ -1,5 +1,5 @@
 class Solution {
-    public int check(int i,int coins[],int amount,int dp[][]){
+    public int check(int i,int amount,int[] coins,int dp[][]){
         if(i==0){
             if(amount%coins[0]==0){
                 return 1;
@@ -10,18 +10,18 @@ class Solution {
         if(dp[i][amount]!=-1){
             return dp[i][amount];
         }
-        int not=check(i-1,coins,amount,dp);
+        int not=check(i-1,amount,coins,dp);
         int take=0;
         if(amount>=coins[i]){
-            take=check(i,coins,amount-coins[i],dp);
+            take=check(i,amount-coins[i],coins,dp);
         }
-        return dp[i][amount] = not+take;
+        return  dp[i][amount]=not+take;
     }
     public int change(int amount, int[] coins) {
         int dp[][]=new int[coins.length][amount+1];
         for(int i=0;i<coins.length;i++){
             Arrays.fill(dp[i],-1);
         }
-        return check(coins.length-1,coins,amount,dp);
+        return check(coins.length-1,amount,coins,dp);
     }
 }
