@@ -4,22 +4,19 @@ class Solution {
         String curr="";
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
-            if(ch=='('){
+            if(s.charAt(i)=='('){
                 st.push(curr);
                 curr="";
-            }else if(ch==')'){
+            }else if(s.charAt(i)==')'){
                 String prev=st.pop();
                 String temp="";
                 for(int j=curr.length()-1;j>=0;j--){
                     temp+=curr.charAt(j);
                 }
                 curr=prev+temp;
-                
             }else{
                 curr+=ch;
             }
-            
-        
         }
         return curr;
     }
