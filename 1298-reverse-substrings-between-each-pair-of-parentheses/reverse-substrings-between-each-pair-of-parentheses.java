@@ -17,7 +17,6 @@ class Solution {
             }else{
                 curr+=ch;
             }
-
         }
         return curr;
     }
