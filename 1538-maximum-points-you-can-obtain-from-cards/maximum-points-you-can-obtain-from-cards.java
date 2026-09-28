@@ -5,15 +5,17 @@ class Solution {
         int max=0;
         for(int i=0;i<k;i++){
             left+=cardPoints[i];
+
         }
         max=left;
-        int index=cardPoints.length-1;
+        int ind=cardPoints.length-1;
         for(int i=k-1;i>=0;i--){
             left-=cardPoints[i];
-            right+=cardPoints[index];
-            index--;
+            right+=cardPoints[ind];
+            ind--;
             max=Math.max(max,left+right);
         }
+
         return max;
     }
 }
