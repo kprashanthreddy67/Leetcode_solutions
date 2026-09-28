@@ -5,21 +5,21 @@ class Solution {
         int max=0;
         for(int r=0;r<s.length();r++){
             char ch=s.charAt(r);
-            if(ch=='a' || ch=='e'|| ch=='i' || ch=='o' ||ch=='u'){
+            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
                 cnt++;
             }
-            if(r-l+1>k){
-                char ch1=s.charAt(l);
-                if(ch1=='a' || ch1=='e' || ch1=='i' || ch1=='o' || ch1=='u'){
-                    cnt--;
-                }
-                l++;
-
-            }
             if(r-l+1==k){
-                max=Math.max(max,cnt);
+                char ch1=s.charAt(l);
+                 max=Math.max(max,cnt);
+                 if(ch1=='a' || ch1=='e' || ch1=='i' || ch1=='o' || ch1=='u'){
+                     cnt--;
+                 }
+                   
+                 l++;
             }
+           
         }
         return max;
+
     }
 }
