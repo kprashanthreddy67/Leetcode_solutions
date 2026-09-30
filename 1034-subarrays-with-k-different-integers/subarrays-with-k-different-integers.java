@@ -1,21 +1,22 @@
 class Solution {
-    public int check(int[]nums,int k){
-        int l=0;
-        int sum=0;
+    public int check(int[] nums,int k){
         HashMap<Integer,Integer> hm=new HashMap<>();
-        int ans=0;
-        for(int r=0;r<nums.length;r++){
-            hm.put(nums[r],hm.getOrDefault(nums[r],0)+1);
+        int l=0;
+        int cnt=0;
+        for(int i=0;i<nums.length;i++){
+            int val=nums[i];
+            hm.put(val,hm.getOrDefault(val,0)+1);
             while(hm.size()>k){
-                hm.put(nums[l],hm.get(nums[l])-1);
-                if(hm.get(nums[l])==0){
-                    hm.remove(nums[l]);
+                int val1=nums[l];
+                hm.put(val1,hm.get(val1)-1);
+                if(hm.get(val1)==0){
+                    hm.remove(val1);
                 }
                 l++;
             }
-            ans+=r-l+1;
+            cnt+=i-l+1;
         }
-        return ans;
+        return cnt;
     }
     public int subarraysWithKDistinct(int[] nums, int k) {
         return check(nums,k)-check(nums,k-1);
