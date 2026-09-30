@@ -7,15 +7,23 @@ class Solution {
             if(weights[i]>m){
                 return false;
             }
-            if(temp+weights[i]<=m){
-                temp+=weights[i];
-            }else{
-                count++;
-                temp=weights[i];
+            if(temp+weights[i]>m){
+                days-=1;
+                temp=0;
             }
-            if(count>=days){
+            temp+=weights[i];
+            if(days<=0){
                 return false;
             }
+            // if(temp+weights[i]<=m){
+            //     temp+=weights[i];
+            // }else{
+            //     count++;
+            //     temp=weights[i];
+            // }
+            // if(count>=days){
+            //     return false;
+            // }
 
         }
         return true;
