@@ -5,13 +5,11 @@ class Solution {
             if(nums[i]>m){
                 return false;
             }
-            if(temp+nums[i]<=m){
-                temp+=nums[i];
-            }else{
+            if(temp+nums[i]>m){
                 k--;
-                temp=nums[i];
+                temp=0;
             }
-           
+            temp+=nums[i];
             if(k<=0){
                 return false;
             }
