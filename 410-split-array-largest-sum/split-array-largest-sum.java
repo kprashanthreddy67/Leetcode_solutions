@@ -2,15 +2,14 @@ class Solution {
     public boolean ispossible(int[] nums,int k,int m){
         int temp=0;
         for(int i=0;i<nums.length;i++){
-            int val=nums[i];
-            if(val>m){
+            if(nums[i]>m){
                 return false;
             }
-            if(temp+val>m){
-                k--;
+            if(temp+nums[i]>m){
+                k-=1;
                 temp=0;
             }
-            temp+=val;
+            temp+=nums[i];
             if(k<=0){
                 return false;
             }
