@@ -1,5 +1,5 @@
 class Solution {
-    public boolean ispossible(int[] bloomDay,int m,int k,int mi){
+    public boolean ispossible(int[]bloomDay,int m,int k,int mi){
         int temp=0;
         for(int i=0;i<bloomDay.length;i++){
             int val=bloomDay[i];
@@ -13,15 +13,17 @@ class Solution {
                 temp=0;
             }
         }
-        if(m>0){
-            return false;
+        if(m<=0){
+            return true;
         }
-        return true;
+        return false;
     }
     public int minDays(int[] bloomDay, int m, int k) {
         int l=1;
         int r=(int)Math.pow(10,9);
+
         if((long)m*k>bloomDay.length){
+
             return -1;
         }
         while(l<=r){
@@ -29,6 +31,7 @@ class Solution {
             if(ispossible(bloomDay,m,k,mid)){
                 r=mid-1;
             }else{
+
                 l=mid+1;
             }
         }
