@@ -12,17 +12,16 @@ class Solution {
             }else{
                 temp=0;
             }
-            
         }
         if(m>0){
-                return false;
+            return false;
         }
         return true;
     }
     public int minDays(int[] bloomDay, int m, int k) {
-        int l=0;
+        int l=1;
         int r=(int)Math.pow(10,9);
-        if(bloomDay.length<(long)m*k){
+        if((long)m*k>bloomDay.length){
             return -1;
         }
         while(l<=r){
