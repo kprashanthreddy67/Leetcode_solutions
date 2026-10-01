@@ -3,15 +3,14 @@ class Solution {
         int num=1;
         int i=0;
         while(k>0){
-            if(i<arr.length && num==arr[i]){
+            if(i<arr.length && arr[i]==num){
                 i++;
-            }else{
+            }else {
                 k--;
                 if(k==0){
                     return num;
-                }    
+                }
             }
-            // i++;
             num++;
         }
         return 0;
