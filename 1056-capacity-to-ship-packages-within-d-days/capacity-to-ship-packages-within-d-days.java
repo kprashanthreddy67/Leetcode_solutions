@@ -1,30 +1,20 @@
 class Solution {
-    public boolean ispossible(int[]weights,int days,int m){
+    public boolean ispossible(int[] weights,int days,int m){
         int temp=0;
-        int count=0;
-
         for(int i=0;i<weights.length;i++){
-            if(weights[i]>m){
+            int val=weights[i];
+            if(val>m){
                 return false;
             }
-            if(temp+weights[i]>m){
+            if(temp+val<=m){
+                temp+=val;
+            }else{
                 days-=1;
-                temp=0;
+                temp=val;
             }
-            temp+=weights[i];
             if(days<=0){
                 return false;
             }
-            // if(temp+weights[i]<=m){
-            //     temp+=weights[i];
-            // }else{
-            //     count++;
-            //     temp=weights[i];
-            // }
-            // if(count>=days){
-            //     return false;
-            // }
-
         }
         return true;
     }
