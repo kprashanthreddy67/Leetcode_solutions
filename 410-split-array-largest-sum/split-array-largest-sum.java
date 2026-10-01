@@ -3,29 +3,23 @@ class Solution {
         int temp=0;
         for(int i=0;i<nums.length;i++){
             int val=nums[i];
-            if(nums[i]>m){
+            if(val>m){
                 return false;
             }
             if(temp+val>m){
                 k--;
                 temp=0;
-
             }
             temp+=val;
             if(k<=0){
-            return false;
+                return false;
             }
         }
         return true;
-        
     }
-    
     public int splitArray(int[] nums, int k) {
         int l=0;
-        int r=0;
-        for(int i:nums){
-            r=r+i;
-        }
+        int r=(int)Math.pow(10,9);
         while(l<=r){
             int mid=l+(r-l)/2;
             if(ispossible(nums,k,mid)){
