@@ -1,19 +1,20 @@
 class Solution {
-    public boolean ispossible(int[] nums,int k,int m){
+    public boolean ispossible(int[] nums,int k,int mid){
         int temp=0;
         for(int i=0;i<nums.length;i++){
-            if(nums[i]>m){
+            if(nums[i]>mid){
                 return false;
             }
-            if(temp+nums[i]>m){
+            if(temp+nums[i]>mid){
                 k--;
                 temp=0;
             }
             temp+=nums[i];
-            if(k<=0){
-                return false;
-            }
+            
 
+        }
+        if(k<=0){
+            return false;
         }
         return true;
     }
@@ -29,6 +30,5 @@ class Solution {
             }
         }
         return l;
-
     }
 }
