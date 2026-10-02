@@ -10,7 +10,7 @@ class Solution {
                 l++;
             }else{
                 min=Math.min(min,nums[mid]);
-                    r=mid-1;
+                    r--;
                 
             }
         }
