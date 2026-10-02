@@ -13,6 +13,7 @@ class Solution {
             if(k<=0){
                 return false;
             }
+
         }
         return true;
     }
@@ -27,7 +28,7 @@ class Solution {
                 l=mid+1;
             }
         }
-
         return l;
+
     }
 }
