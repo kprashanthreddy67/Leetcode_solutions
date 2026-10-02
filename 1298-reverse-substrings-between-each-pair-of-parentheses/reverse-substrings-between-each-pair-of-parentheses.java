@@ -1,6 +1,7 @@
 class Solution {
     public String reverseParentheses(String s) {
         Stack<String> st=new Stack<>();
+        
         String curr="";
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
