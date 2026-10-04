@@ -3,7 +3,6 @@ class Solution {
         long prefix[]=new long[nums.length];
         long sum=0;
         for(int i=0;i<nums.length;i++){
-
             sum+=nums[i];
             prefix[i]=sum;
         }
@@ -11,6 +10,7 @@ class Solution {
         Arrays.fill(arr,-1);
         for(int i=k;i<nums.length-k;i++){
             long cnt=prefix[i+k];
+
             if(i-k>0){
                 cnt-=prefix[i-k-1];
             }
