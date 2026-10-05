@@ -1,6 +1,6 @@
 class Solution {
     public String minRemoveToMakeValid(String s) {
-        StringBuilder sb=new  StringBuilder();
+        StringBuilder sb=new StringBuilder();
         int open=0;
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
@@ -14,7 +14,6 @@ class Solution {
                     sb.append(ch);
                     open--;
                 }
-                
             }
         }
         for(int i=sb.length()-1;i>=0;i--){
@@ -22,12 +21,9 @@ class Solution {
                 if(sb.charAt(i)=='('){
                     sb.deleteCharAt(i);
                     open--;
-
                 }
-                
             }
         }
         return sb.toString();
     }
-
 }
