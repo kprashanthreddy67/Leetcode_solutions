@@ -1,7 +1,7 @@
 class Solution {
     public int scoreOfParentheses(String s) {
-        int score=0;
         Stack<Integer> st=new Stack<>();
+        int score=0;
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(ch=='('){
@@ -12,12 +12,11 @@ class Solution {
                 if(score==0){
                     score=1;
                 }else{
-                    score=2*(score);
+                    score=2*score;
                 }
                 score=prev+score;
             }
         }
         return score;
-        
     }
 }
