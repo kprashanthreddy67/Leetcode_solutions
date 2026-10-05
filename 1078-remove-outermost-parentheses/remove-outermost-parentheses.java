@@ -5,20 +5,20 @@ class Solution {
         StringBuilder sb=new StringBuilder();
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
-           if(ch=='('){
+            if(ch=='('){
                 if(score>0){
                     st.push(ch);
                 }
                 score++;
-           }else if(ch==')'){
+            }else if(ch==')'){
                 score--;
                 if(score>0){
                     st.push(ch);
                 }
-           }
+            }
         }
-        for(char ch:st){
-            sb.append(ch);
+        for(char i:st){
+            sb.append(i);
         }
         return sb.toString();
     }
