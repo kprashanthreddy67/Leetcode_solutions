@@ -12,7 +12,7 @@ class Solution {
                 if(score==0){
                     score=1;
                 }else{
-                    score=2*score;
+                    score=score*2;
                 }
                 score=prev+score;
             }
