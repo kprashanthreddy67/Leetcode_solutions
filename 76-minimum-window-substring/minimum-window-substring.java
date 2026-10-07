@@ -4,23 +4,19 @@ class Solution {
         for(int i=0;i<t.length();i++){
             char ch=t.charAt(i);
             hm.put(ch,hm.getOrDefault(ch,0)+1);
-            
         }
-        int cnt=0;
         int l=0;
+        int cnt=0;
         int min=Integer.MAX_VALUE;
         int sindex=-1;
         for(int r=0;r<s.length();r++){
             char ch=s.charAt(r);
-            
-                if(hm.containsKey(ch)){
-                    if(hm.get(ch)>0){
-                        cnt++;
-                    }
-                    hm.put(ch,hm.get(ch)-1);
+            if(hm.containsKey(ch)){
+                if(hm.get(ch)>0){
+                    cnt++;
                 }
-              
-            
+                hm.put(ch,hm.get(ch)-1);
+            }
             while(cnt==t.length()){
                 if(r-l+1<min){
                     min=r-l+1;
@@ -30,7 +26,6 @@ class Solution {
                 if(hm.containsKey(left)){
                     hm.put(left,hm.get(left)+1);
                     if(hm.get(left)>0){
-
                         cnt--;
                     }
                 }
