@@ -1,7 +1,7 @@
 class Solution {
     public int minInsertions(String s) {
-        int answer=0;
         Stack<Character> st=new Stack<>();
+        int answer=0;
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(ch=='('){
@@ -18,10 +18,8 @@ class Solution {
                     answer++;
                 }
             }
-
         }
         answer+=(st.size()*2);
         return answer;
     }
-
 }
