@@ -1,1 +1,1 @@
-<h2>minimum-insertions-to-balance-a-parentheses-string Notes</h2><hr>[ Time taken: 4hrs 47m 18s ]
+<h2>minimum-insertions-to-balance-a-parentheses-string Notes</h2><hr>[ Time taken: 5hrs 3m 53s ]
