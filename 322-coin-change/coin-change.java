@@ -1,8 +1,8 @@
 class Solution {
-    public int check(int i,int[] coins,int amount,int dp[][]){
+    public int check(int i,int [] coins,int amount,int dp[][]){
         if(i==0){
             if(amount%coins[0]==0){
-                return amount/coins[0];
+                return  dp[i][amount] = amount/coins[0];
             }
             return (int)1e9;
         }
@@ -19,15 +19,13 @@ class Solution {
     public int coinChange(int[] coins, int amount) {
         int dp[][]=new int[coins.length][amount+1];
         for(int i=0;i<coins.length;i++){
-
             Arrays.fill(dp[i],-1);
         }
-        int ans = check(coins.length-1,coins,amount,dp);
-        if(ans>=(int)1e9){
+        int ans= check(coins.length-1,coins,amount,dp);
+        if(ans==(int)1e9){
             return -1;
         }else{
             return ans;
         }
-        
     }
 }
