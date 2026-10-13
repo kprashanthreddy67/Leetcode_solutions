@@ -19,7 +19,7 @@ class Solution {
         }
       if(k==1){
         String res=s;
-        for(int i=0;i<s.length();i++){
+        for(int i=0;i<s.length()-1;i++){
             char first=arr[0];
             for(int j=0;j<arr.length-1;j++){
                 arr[j]=arr[j+1];
