@@ -6,8 +6,8 @@ class Solution {
         }
         if(k>1){
             Arrays.sort(arr);
-            String temp=new String(arr);
-            return temp;
+            String key=new String(arr);
+            return key;
         }
         if(k==1){
             String res=s;
@@ -17,6 +17,7 @@ class Solution {
                     arr[j]=arr[j+1];
                 }
                 arr[arr.length-1]=first;
+
                 String temp=new String(arr);
                 if(temp.compareTo(res)<0){
                     res=temp;
