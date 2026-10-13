@@ -1,6 +1,6 @@
 class Solution {
     public int compress(char[] chars) {
-        int  i=0;
+        int i=0;
         int index=0;
         while(i<chars.length){
             int cnt=0;
@@ -12,9 +12,9 @@ class Solution {
             chars[index]=curr;
             index++;
             if(cnt>1){
-                String curr_index = String.valueOf(cnt);
-                for(int j=0;j<curr_index.length();j++){
-                    chars[index]=curr_index.charAt(j);
+                String value=String.valueOf(cnt);
+                for(int j=0;j<value.length();j++){
+                    chars[index]=value.charAt(j);
                     index++;
                 }
             }
