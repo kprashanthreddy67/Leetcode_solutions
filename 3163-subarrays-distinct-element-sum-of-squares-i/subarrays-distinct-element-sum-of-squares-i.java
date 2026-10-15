@@ -4,9 +4,10 @@ class Solution {
         for(int i=0;i<nums.size();i++){
             HashSet<Integer> hs=new HashSet<>();
             for(int j=i;j<nums.size();j++){
-                if(!hs.contains(nums.get(j))){
-                    hs.add(nums.get(j));
-                }
+                // if(!hs.contains(nums.get(j))){
+                //     hs.add(nums.get(j));
+                // }
+                hs.add(nums.get(j));
                 sum+=(hs.size()*hs.size());
             }
         }
