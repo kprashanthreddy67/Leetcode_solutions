@@ -15,7 +15,6 @@ class Solution {
                 char first=arr[0];
                 for(int j=0;j<arr.length-1;j++){
                     arr[j]=arr[j+1];
-
                 }
                 arr[arr.length-1]=first;
                 String temp=new String(arr);
@@ -24,6 +23,7 @@ class Solution {
                 }
             }
             return res;
+
         }
         return "";
     }
