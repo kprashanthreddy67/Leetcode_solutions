@@ -5,11 +5,12 @@ class Solution {
                 if(haystack.charAt(i+j)!=needle.charAt(j)){
                     break;
                 }
-                 if(j==needle.length()-1){
+
+                if(j==needle.length()-1){
                     return i;
-                 }
+                }
             }
-           
+            
         }
         return -1;
     }
