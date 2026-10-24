@@ -15,7 +15,7 @@
  */
 class Solution {
     int ans=0;
-    public void check(TreeNode root,int max,int min){
+    public void check(TreeNode root,int min,int max){
         if(root==null){
             return;
         }
@@ -23,8 +23,8 @@ class Solution {
         ans=Math.max(ans,Math.abs(root.val-max));
         min=Math.min(min,root.val);
         max=Math.max(max,root.val);
-        check(root.left,max,min);
-        check(root.right,max,min);
+        check(root.left,min,max);
+        check(root.right,min,max);
     }
     public int maxAncestorDiff(TreeNode root) {
         check(root,root.val,root.val);
