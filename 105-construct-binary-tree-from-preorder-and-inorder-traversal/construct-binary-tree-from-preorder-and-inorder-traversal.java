@@ -14,15 +14,15 @@
  * }
  */
 class Solution {
-    public TreeNode  check(int[] preorder,int prestart,int preend,int[] inorder,int instart,int inend,HashMap<Integer,Integer>hm){
-        if(prestart>preend || instart>inend){
+    public TreeNode check(int[] preorder,int prestart,int preend,int[]inorder,int instart,int inend,HashMap<Integer,Integer>hm){
+        if(instart>inend || prestart>preend){
             return null;
         }
-        TreeNode  root=new TreeNode(preorder[prestart]);
+        TreeNode root=new TreeNode(preorder[prestart]);
         int inroot=hm.get(root.val);
-        int numleft=inroot-instart;
-        root.left=check(preorder,prestart+1,prestart+numleft,inorder,instart,inroot-1,hm);
-        root.right=check(preorder,prestart+numleft+1,preend,inorder,inroot+1,inend,hm);
+        int inleft=inroot-instart;
+        root.left=check(preorder,prestart+1,prestart+inleft,inorder,instart,inroot-1,hm);
+        root.right=check(preorder,prestart+inleft+1,preend,inorder,inroot+1,inend,hm);
         return root;
     }
     public TreeNode buildTree(int[] preorder, int[] inorder) {
