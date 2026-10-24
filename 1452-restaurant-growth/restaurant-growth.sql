@@ -11,8 +11,8 @@ round((
     where c2.visited_on between date_sub(c1.visited_on,interval 6 day) and c1.visited_on
 ),2) as average_amount
 from Customer c1
-where c1.visited_on>=(
-    select Date_add(min(visited_on),interval 6 day)
-    from Customer 
+where visited_on>=(
+    select date_add(min(visited_on), interval 6 day)
+    from Customer
 )
-order by c1.visited_on asc
+order by visited_on asc
