@@ -14,7 +14,7 @@ class Solution {
             if(i-k>0){
                 cnt-=prefix[i-k-1];
             }
-            arr[i]=(int)((cnt)/((2l*k)+1));
+            arr[i]=(int)((cnt)/((2L*k)+1));
         }
         return arr;
     }
