@@ -1,6 +1,6 @@
 class Solution {
-    public long check(int[][] grid,int r,int c){
-        if(r<0 ||c<0 || r>=grid.length || c>=grid[0].length){
+    public long check(int grid[][],int r,int c){
+        if(r<0 || c<0|| r>=grid.length || c>=grid[0].length){
             return 0;
         }
         if(grid[r][c]<=0){
