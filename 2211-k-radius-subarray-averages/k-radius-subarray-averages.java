@@ -8,13 +8,13 @@ class Solution {
         }
         int arr[]=new int[nums.length];
         Arrays.fill(arr,-1);
+        int l=0;
         for(int i=k;i<nums.length-k;i++){
             long cnt=prefix[i+k];
-
-            if(i-k>0){
+            if(i-k-1>=0){
                 cnt-=prefix[i-k-1];
             }
-            arr[i]=(int)((cnt)/((2L*k)+1));
+            arr[i]=(int)((cnt)/((2l*k)+1));
         }
         return arr;
     }
