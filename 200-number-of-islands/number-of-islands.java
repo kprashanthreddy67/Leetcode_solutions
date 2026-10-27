@@ -1,10 +1,10 @@
 class Solution {
-    public void check(char [][]grid,int r,int c){
+    public void check(char grid[][],int r,int c){
         if(r<0 || c<0 || r>=grid.length || c>=grid[0].length){
-            return ;
+            return;
         }
         if(grid[r][c]=='0'){
-            return ;
+            return;
         }
         grid[r][c]='0';
         check(grid,r,c-1);
