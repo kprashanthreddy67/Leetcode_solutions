@@ -6,12 +6,11 @@ class Solution {
                 return false;
             }
             if(temp+nums[i]>mid){
-                k--;
+                k-=1;
                 temp=0;
+
             }
             temp+=nums[i];
-            
-
         }
         if(k<=0){
             return false;
