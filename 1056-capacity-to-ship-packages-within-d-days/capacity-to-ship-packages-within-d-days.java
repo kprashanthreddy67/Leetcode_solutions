@@ -1,25 +1,23 @@
 class Solution {
-    public boolean ispossible(int[] weights,int days,int m){
+    public boolean ispossible(int[] weights,int days,int mid){
         int temp=0;
         for(int i=0;i<weights.length;i++){
-            int val=weights[i];
-            if(val>m){
+            if(weights[i]>mid){
                 return false;
             }
-            if(temp+val>m){
+            if(weights[i]+temp>mid){
                 days-=1;
                 temp=0;
             }
-            temp+=val;
-            if(days<=0){
-                return false;
-            }
-
+            temp+=weights[i];
+        }
+        if(days<=0){
+            return false;
         }
         return true;
     }
     public int shipWithinDays(int[] weights, int days) {
-        int l=0;
+        int l=1;
         int r=(int)Math.pow(10,9);
         while(l<=r){
             int mid=l+(r-l)/2;
