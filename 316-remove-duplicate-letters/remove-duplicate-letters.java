@@ -1,9 +1,8 @@
 class Solution {
     public String removeDuplicateLetters(String s) {
-        HashSet<Character>hs=new HashSet<>();
-        StringBuilder sb=new StringBuilder();
-        Stack<Character> st=new Stack<>();
         int freq[]=new int[26];
+        HashSet<Character> hs=new HashSet<>();
+        Stack<Character> st=new Stack<>();
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             freq[ch-'a']++;
@@ -20,8 +19,10 @@ class Solution {
             hs.add(ch);
             st.push(ch);
         }
-        for(char ch:st){
-            sb.append(ch);
+        StringBuilder sb=new StringBuilder();
+        for(char str:st){
+            sb.append(str);
+            
         }
         return sb.toString();
     }
