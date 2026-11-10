@@ -15,21 +15,20 @@
  */
 class Solution {
     int max=0;
-    public void depth(TreeNode root,int depth,HashMap<Integer,Integer> hm){
-        
+    public void depth(TreeNode root,int d,HashMap<Integer,Integer> hm){
         if(root==null){
             return;
         }
-        max=Math.max(max,depth);
-        hm.put(root.val,depth);
-        depth(root.left,depth+1,hm);
-        depth(root.right,depth+1,hm);
+        max=Math.max(max,d);
+        hm.put(root.val,d);
+        depth(root.left,d+1,hm);
+        depth(root.right,d+1,hm);
     }
     public TreeNode check(TreeNode root,HashMap<Integer,Integer> hm){
-        if(root==null){
+         if(root==null){
             return null;
         }
-        if(hm.get(root.val)==max && root.left==null &&root.right==null){
+        if(hm.get(root.val)==max){
             return root;
         }
         TreeNode left=check(root.left,hm);
@@ -45,8 +44,7 @@ class Solution {
     public TreeNode lcaDeepestLeaves(TreeNode root) {
         HashMap<Integer,Integer> hm=new HashMap<>();
         depth(root,0,hm);
-       
         return check(root,hm);
-        
+       
     }
 }
