@@ -5,14 +5,14 @@ class Solution {
             if(weights[i]>mid){
                 return false;
             }
-            if(weights[i]+temp>mid){
+            if(temp+weights[i]>mid){
                 days-=1;
                 temp=0;
             }
             temp+=weights[i];
-        }
-        if(days<=0){
-            return false;
+            if(days<=0){
+                return false;
+            }
         }
         return true;
     }
