@@ -1,10 +1,10 @@
 class Solution {
-    public void check(char grid[][],int i,int j){
+    public void  check(char grid[][],int i,int j){
         if(i<0 || j<0 || i>=grid.length || j>=grid[0].length){
-            return;
+            return ;
         }
         if(grid[i][j]=='0'){
-            return;
+            return ;
         }
         grid[i][j]='0';
         check(grid,i,j-1);
@@ -13,12 +13,9 @@ class Solution {
         check(grid,i+1,j);
     }
     public int numIslands(char[][] grid) {
-        int m=grid.length;
-        int n=grid[0].length;
-
         int cnt=0;
         for(int i=0;i<grid.length;i++){
-            for(int j=0;j<n;j++){
+            for(int j=0;j<grid[0].length;j++){
                 if(grid[i][j]=='1'){
                     cnt++;
                     check(grid,i,j);
